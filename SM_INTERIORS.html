@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SM INTERIORS | Your Dream Space, Our Design</title>
+
+<style>
+:root {
+  --cream: #f7f4ef;
+  --beige: #e8ded1;
+  --brown: #594638;
+  --dark: #392d25;
+  --white: #ffffff;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--cream);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: 90%;
+  max-width: 1150px;
+  margin: auto;
+}
+
+header {
+  background: var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 12px #00000010;
+}
+
+nav {
+  min-height: 78px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 23px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.logo small {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a:hover { color: #98795f; }
+
+.menu-btn {
+  display: none;
+  padding: 10px;
+  border: none;
+  background: var(--brown);
+  color: white;
+  border-radius: 5px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border: 1px solid var(--brown);
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--brown);
+  color: white;
+}
+
+.btn-light {
+  background: white;
+  color: var(--dark);
+}
+
+/* HOME */
+
+.hero {
+  min-height: 580px;
+  display: flex;
+  align-items: center;
+  color: white;
+  background:
+    linear-gradient(90deg, #211812cc, #21181240),
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content { padding: 80px 0; }
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+.hero h1 {
+  font-size: clamp(42px, 6vw, 76px);
+  line-height: 1.1;
+  margin: 20px 0;
+}
+
+.hero p {
+  max-width: 520px;
+  font-size: 18px;
+  margin-bottom: 28px;
+}
+
+.hero .btn { margin: 5px 8px 5px 0; }
+
+/* GENERAL SECTIONS */
+
+section.content-section { padding: 80px 0; }
+
+.white-section { background: white; }
+
+.section-label {
+  color: #98795f;
+  font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 12px;
+}
+
+h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  line-height: 1.2;
+  margin: 12px 0;
+}
+
+.section-intro {
+  max-width: 650px;
+  color: #766b62;
+  margin-bottom: 32px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 40px;
+}
+
+.about-image {
+  min-height: 360px;
+  border-radius: 12px;
+  background:
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1000&q=80")
+    center/cover;
+}
+
+.check-list { padding-left: 20px; }
+
+.check-list li { margin: 12px 0; }
+
+/* SERVICES AND PROJECTS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5dbd0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.service-card {
+  padding: 25px;
+  background: var(--cream);
+}
+
+.service-icon { font-size: 32px; }
+
+.card h3 { margin: 12px 0 5px; }
+
+.card p {
+  color: #766b62;
+  font-size: 14px;
+}
+
+.project-image {
+  height: 230px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+}
+
+.project-image span {
+  margin: 12px;
+  padding: 5px 10px;
+  background: #ffffffdf;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.project-info { padding: 18px; }
+
+.project-info h3 { margin-top: 0; }
+
+.note {
+  margin-top: 24px;
+  padding: 15px;
+  background: var(--beige);
+  border-radius: 8px;
+  font-size: 14px;
+}
+
+/* ABOUT */
+
+.about-banner {
+  background: var(--dark);
+  color: white;
+  padding: 45px;
+  border-radius: 14px;
+}
+
+.about-banner p {
+  color: #e1d6cc;
+  max-width: 700px;
+}
+
+/* CONTACT */
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.contact-details { margin-top: 25px; }
+
+.contact-item {
+  display: block;
+  padding: 16px;
+  background: var(--cream);
+  border-radius: 8px;
+  margin: 12px 0;
+}
+
+form {
+  padding: 25px;
+  background: var(--cream);
+  border: 1px solid #e5dbd0;
+  border-radius: 10px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d7cabe;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  font: inherit;
+  background: white;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.status {
+  margin-top: 12px;
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+/* FOOTER */
+
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 30px 0;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+footer p {
+  color: #d6c9bd;
+  font-size: 13px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 760px) {
+  .menu-btn { display: block; }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 78px;
+    left: 0;
+    width: 100%;
+    padding: 20px 5%;
+    background: var(--cream);
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links.open { display: flex; }
+
+  .about-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid { grid-template-columns: repeat(2, 1fr); }
+
+  .hero { min-height: 520px; }
+}
+
+@media (max-width: 500px) {
+  .grid { grid-template-columns: 1fr; }
+
+  section.content-section { padding: 55px 0; }
+
+  .about-banner { padding: 25px; }
+
+  .about-image { min-height: 260px; }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+    <a class="logo" href="#home">
+      SM INTERIORS
+      <small>YOUR DREAM SPACE, OUR DESIGN</small>
+    </a>
+
+    <button class="menu-btn" id="menuBtn"
+      aria-expanded="false" aria-controls="navLinks">
+      ☰ Menu
+    </button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#home">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#about">About Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- HOME SECTION -->
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow">
+      Thoughtful Interiors • Timeless Living
+    </div>
+
+    <h1>Your Dream Space,<br>Our Design.</h1>
+
+    <p>
+      We transform ordinary spaces into beautiful places
+      to live, work and feel inspired.
+    </p>
+
+    <a class="btn btn-light" href="#projects">
+      Explore Our Work ↗
+    </a>
+
+    <a class="btn" style="color:white;border-color:white"
+       href="#contact">
+      Contact Us
+    </a>
+  </div>
+</section>
+
+<!-- INTRODUCTION -->
+
+<section class="content-section white-section">
+  <div class="container about-grid">
+
+    <div>
+      <div class="section-label">WELCOME TO SM INTERIORS</div>
+
+      <h2>Beautiful spaces.<br>Made for real life.</h2>
+
+      <p>
+        We believe great interiors balance beauty and everyday
+        comfort. Our goal is to create spaces that reflect your
+        personality, needs and lifestyle.
+      </p>
+
+      <ul class="check-list">
+        <li>Modern and elegant designs</li>
+        <li>Practical and smart space planning</li>
+        <li>Beautiful colours and finishes</li>
+        <li>Personalised interior solutions</li>
+      </ul>
+
+      <a href="#services" class="btn btn-primary">
+        Our Services
+      </a>
+    </div>
+
+    <div class="about-image"
+      role="img" aria-label="Modern neutral living room">
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+
+<section class="content-section" id="services">
+  <div class="container">
+
+    <div class="section-label">WHAT WE DO</div>
+    <h2>Our Services</h2>
+
+    <p class="section-intro">
+      Thoughtful interior solutions for every corner of your space.
+    </p>
+
+    <div class="grid">
+
+      <article class="card service-card">
+        <div class="service-icon">🛋️</div>
+        <h3>Living Room Interiors</h3>
+        <p>Comfortable living rooms with beautiful furniture,
+        lighting and elegant finishes.</p>
+      </article>
+
+      <article class="card service-card">
+        <div class="service-icon">🍽️</div>
+        <h3>Modular Kitchens</h3>
+        <p>Smart kitchen layouts with practical storage
+        and modern designs.</p>
+      </article>
+
+      <article class="card service-card">
+        <div class="service-icon">🛏️</div>
+        <h3>Bedroom Design</h3>
+        <p>Peaceful bedrooms designed for comfort,
+        relaxation and personal style.</p>
+      </article>
+
+      <article class="card service-card">
+        <div class="service-icon">🏡</div>
+        <h3>Full Home Interiors</h3>
+        <p>Coordinated interiors that bring your entire
+        home together beautifully.</p>
+      </article>
+
+      <article class="card service-card">
+        <div class="service-icon">🏢</div>
+        <h3>Office Interiors</h3>
+        <p>Organised, attractive workspaces designed
+        for everyday productivity.</p>
+      </article>
+
+      <article class="card service-card">
+        <div class="service-icon">✨</div>
+        <h3>Design Consultation</h3>
+        <p>Guidance on colours, furniture, layouts
+        and finishing touches.</p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+
+<section class="content-section white-section" id="projects">
+  <div class="container">
+
+    <div class="section-label">OUR WORK</div>
+    <h2>Our Projects</h2>
+
+    <p class="section-intro">
+      Explore our interior design portfolio.
+      Replace these example photos with your own project photos.
+    </p>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="project-image"
+          style="background-image:url('https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=900&q=80')">
+          <span>Example photo</span>
+        </div>
+        <div class="project-info">
+          <h3>Living Room Project</h3>
+          <p>Modern comfort and elegance</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="project-image"
+          style="background-image:url('https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=900&q=80')">
+          <span>Example photo</span>
+        </div>
+        <div class="project-info">
+          <h3>Home Interior Project</h3>
+          <p>Warm and minimal design</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="project-image"
+          style="background-image:url('https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=900&q=80')">
+          <span>Example photo</span>
+        </div>
+        <div class="project-info">
+          <h3>Bedroom Project</h3>
+          <p>Comfort and quiet elegance</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="note">
+      DESIGNING PEACE AT HOME
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT US -->
+
+<section class="content-section" id="about">
+  <div class="container">
+
+    <div class="about-banner">
+      <div class="section-label">ABOUT SM INTERIORS</div>
+
+      <h2>Spaces with purpose.<br>Details with meaning.</h2>
+
+      <p>
+        At SM Interiors, our design philosophy is simple:
+        create spaces that look beautiful, work effortlessly
+        and feel like home. We focus on thoughtful planning,
+        balanced materials and personal touches.
+      </p>
+
+      <a href="#contact" class="btn btn-light">
+        Start a Conversation
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="content-section white-section" id="contact">
+  <div class="container contact-grid">
+
+    <div>
+      <div class="section-label">GET IN TOUCH</div>
+      <h2>Tell us about your space.</h2>
+
+      <p>
+        Planning a new home or updating a room?
+        Contact us to discuss your interior design ideas.
+      </p>
+
+      <div class="contact-details">
+
+        <a class="contact-item" id="phoneLink" href="#contact">
+          ☎️ <strong>Call Us</strong><br>
+          <span id="phoneDisplay">Add your business phone number</span>
+        </a>
+
+        <a class="contact-item" id="whatsappLink" href="#contact">
+          💬 <strong>WhatsApp</strong><br>
+          Chat with us about your project
+        </a>
+
+        <div class="contact-item">
+          ✉️ <strong>Enquiry Form</strong><br>
+          Send us your project details
+        </div>
+        <!-- Business Address -->
+<div class="contact-address">
+  <h3>Our Address</h3>
+  <p>
+    <strong>SM INTERIORS</strong><br>
+    plotn-1-147,vinayaknagar <br>
+    jeedimetla, hyderabad,<br>
+    telangana, 500001
+  </p>
+
+  <a href="https://maps.app.goo.gl/F93zNVYJfqM3NjYV6"
+     target="_blank">
+    Find Us on Google Maps
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <form id="enquiryForm">
+      <h3>Project Enquiry</h3>
+
+      <label for="name">Your Name *</label>
+      <input id="name" name="name" required
+        placeholder="Enter your full name">
+
+      <label for="phone">Your Phone Number *</label>
+      <input id="phone" name="phone" type="tel" required
+        placeholder="Enter your phone number">
+
+      <label for="email">Email Address</label>
+      <input id="email" name="email" type="email"
+        placeholder="Enter your email">
+
+      <label for="service">Service Required</label>
+      <select id="service" name="service">
+        <option>Full Home Interiors</option>
+        <option>Living Room</option>
+        <option>Modular Kitchen</option>
+        <option>Bedroom Design</option>
+        <option>Office Interiors</option>
+        <option>Design Consultation</option>
+        <option>Other</option>
+      </select>
+
+      <label for="message">Project Details *</label>
+      <textarea id="message" name="message" required
+        placeholder="Tell us about your project..."></textarea>
+
+      <button class="btn btn-primary" type="submit">
+        Send Enquiry ↗
+      </button>
+
+      <p class="status" id="formStatus" role="status"></p>
+    </form>
+
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="container footer-row">
+
+    <div>
+      <div class="logo">SM INTERIORS</div>
+      <p>Your Dream Space, Our Design</p>
+    </div>
+
+    <div>
+      <a href="#home">Home</a> ·
+      <a href="#services">Services</a> ·
+      <a href="#projects">Projects</a> ·
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p>© <span id="year"></span> SM Interiors</p>
+
+  </div>
+</footer>
+
+<script>
+/* REPLACE THIS WITH YOUR REAL WHATSAPP NUMBER.
+   India example format: 919876543210
+   Include country code, digits only, no plus sign or spaces.
+*/
+const BUSINESS_PHONE = "917386511446";
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", function () {
+  const open = navLinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(open));
+  menuBtn.textContent = open ? "✕ Close" : "☰ Menu";
+});
+
+navLinks.querySelectorAll("a").forEach(function (link) {
+  link.addEventListener("click", function () {
+    navLinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuBtn.textContent = "☰ Menu";
+  });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+
+const phoneLink = document.getElementById("phoneLink");
+const whatsappLink = document.getElementById("whatsappLink");
+const phoneDisplay = document.getElementById("phoneDisplay");
+
+const validPhone =
+  /^\d{10,15}$/.test(BUSINESS_PHONE) &&
+  !BUSINESS_PHONE.includes("X");
+
+if (validPhone) {
+  phoneLink.href = "tel:+" + BUSINESS_PHONE;
+  whatsappLink.href = "https://wa.me/" + BUSINESS_PHONE;
+  whatsappLink.target = "_blank";
+  whatsappLink.rel = "noopener";
+  phoneDisplay.textContent = "+" + BUSINESS_PHONE;
+} else {
+  function explainMissingNumber(event) {
+    event.preventDefault();
+    alert("Please replace BUSINESS_PHONE in the JavaScript with your real business phone number.");
+  }
+
+  phoneLink.addEventListener("click", explainMissingNumber);
+  whatsappLink.addEventListener("click", explainMissingNumber);
+}
+
+document.getElementById("enquiryForm").addEventListener("submit",
+  function (event) {
+    event.preventDefault();
+
+    const form = event.currentTarget;
+
+    if (!form.reportValidity()) return;
+
+    const data = new FormData(form);
+
+    const message = [
+      "Hello SM Interiors! I would like to enquire about an interior design project.",
+      "Name: " + data.get("name"),
+      "Phone: " + data.get("phone"),
+      "Email: " + (data.get("email") || "Not provided"),
+      "Service: " + data.get("service"),
+      "Project details: " + data.get("message")
+    ].join("\n");
+
+    const status = document.getElementById("formStatus");
+
+    if (validPhone) {
+      status.textContent =
+        "Opening WhatsApp. Review your enquiry and press Send there.";
+
+      const url = "https://wa.me/" + BUSINESS_PHONE +
+        "?text=" + encodeURIComponent(message);
+
+      window.open(url, "_blank", "noopener");
+    } else {
+      status.textContent =
+        "Your enquiry is ready, but WhatsApp is not configured. " +
+        "Replace BUSINESS_PHONE in the code with your real number.";
+
+      const copyArea = document.createElement("textarea");
+      copyArea.value = message;
+      copyArea.setAttribute("aria-label", "Prepared enquiry message");
+      copyArea.style.marginTop = "10px";
+      status.appendChild(copyArea);
+    }
+  }
+);
+</script>
+
+</body>
+</html> 
